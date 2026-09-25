@@ -1,0 +1,190 @@
+{
+  "tool": {
+    "id": "apri",
+    "title": "APRI (índice AST/plaquetas)",
+    "short": "Fibrose significativa e cirrose na hepatite C",
+    "desc": "Calcule o APRI (razão AST/plaquetas) para estimar fibrose hepática significativa e cirrose na hepatite C crônica, com os cortes de Wai e da OMS.",
+    "lead": "Índice simples que relaciona a AST (em múltiplos do limite superior) com as plaquetas para estimar fibrose significativa e cirrose, sobretudo na hepatite C crônica.",
+    "spec": [
+      "gastroenterologia",
+      "infectologia",
+      "clinica-medica"
+    ],
+    "fields": [
+      [
+        "ast",
+        "AST (TGO)",
+        "num",
+        {
+          "min": 1,
+          "max": 5000,
+          "unit": "U/L",
+          "ph": "60"
+        }
+      ],
+      [
+        "lsn",
+        "Limite superior do normal da AST (do laboratório)",
+        "num",
+        {
+          "min": 10,
+          "max": 100,
+          "unit": "U/L",
+          "ph": "40"
+        }
+      ],
+      [
+        "plq",
+        "Plaquetas",
+        "num",
+        {
+          "min": 5,
+          "max": 1500,
+          "unit": "× 10³/mm³",
+          "ph": "150"
+        }
+      ]
+    ],
+    "formula": "<p>APRI = (AST ÷ limite superior do normal) ÷ plaquetas (10⁹/L) × 100.</p>",
+    "table": [
+      [
+        "APRI",
+        "Fibrose significativa (≥ F2)",
+        "Cirrose (F4)"
+      ],
+      [
+        "≤ 0,5",
+        "Improvável",
+        "Improvável"
+      ],
+      [
+        "0,5 a 1,0",
+        "Indeterminado",
+        "Improvável"
+      ],
+      [
+        "1,0 a 1,5",
+        "Indeterminado",
+        "Indeterminado"
+      ],
+      [
+        "1,5 a 2,0",
+        "Provável",
+        "Indeterminado"
+      ],
+      [
+        "&gt; 2,0",
+        "Provável",
+        "Provável"
+      ]
+    ],
+    "tips": [
+      "Cortes de Wai (2003): ≤ 0,5 e &gt; 1,5 para fibrose significativa; &lt; 1,0 e &gt; 2,0 para cirrose. Cerca de metade dos pacientes fica na faixa indeterminada.",
+      "O APRI tem boa especificidade e baixa sensibilidade para cirrose: um valor baixo não exclui cirrose com segurança.",
+      "Use o limite superior do normal do próprio laboratório; trocar 40 por 35 U/L muda o resultado.",
+      "Hepatite aguda, hemólise, miopatia e plaquetopenia de outra causa (hiperesplenismo por outra doença, PTI) invalidam o índice.",
+      "Na esteatose hepática, prefira o FIB-4."
+    ],
+    "sources": [
+      [
+        "Wai CT et al. A simple noninvasive index can predict both significant fibrosis and cirrhosis in patients with chronic hepatitis C. Hepatology, 2003.",
+        "https://doi.org/10.1053/jhep.2003.50346"
+      ]
+    ],
+    "cases": [
+      [
+        "AST 30, LSN 40, plaquetas 250: 0,30 (improvável)",
+        {
+          "ast": 30,
+          "lsn": 40,
+          "plq": 250
+        },
+        {
+          "raw": {
+            "apri": 0.3
+          },
+          "main": "0,30",
+          "level": "low",
+          "tol": 0.001
+        }
+      ],
+      [
+        "AST 60, LSN 40, plaquetas 150: 1,00 (indeterminado)",
+        {
+          "ast": 60,
+          "lsn": 40,
+          "plq": 150
+        },
+        {
+          "raw": {
+            "apri": 1
+          },
+          "level": "mid",
+          "tol": 0.001
+        }
+      ],
+      [
+        "AST 80, LSN 40, plaquetas 100: 2,00 (fibrose significativa provável; cirrose ainda indeterminada)",
+        {
+          "ast": 80,
+          "lsn": 40,
+          "plq": 100
+        },
+        {
+          "raw": {
+            "apri": 2
+          },
+          "level": "high",
+          "tol": 0.001
+        }
+      ],
+      [
+        "AST 120, LSN 40, plaquetas 100: 3,00 (cirrose provável)",
+        {
+          "ast": 120,
+          "lsn": 40,
+          "plq": 100
+        },
+        {
+          "raw": {
+            "apri": 3
+          },
+          "level": "high",
+          "tol": 0.001
+        }
+      ]
+    ],
+    "batch": "renal-digestivo",
+    "kind": "Calculadora",
+    "config": null,
+    "areaId": "renal-digestivo",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/renal-digestivo.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 4,
+      "passed": 4,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "status": "needs-review",
+    "reason": "Revisão documental e clínica independente pendente.",
+    "clinicalValidation": "not-performed"
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/renal-digestivo.php",
+    "sha256": "95087d729438637d36e1a49af04d8de0fe1d9f7876443084443906a9281ef107",
+    "bytes": 109421
+  },
+  "clinicalValidation": "not-performed"
+}

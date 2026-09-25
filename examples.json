@@ -1,0 +1,87 @@
+[
+  {
+    "label": "AST 30, LSN 40, plaquetas 250: 0,30 (improvável)",
+    "input": {
+      "ast": 30,
+      "lsn": 40,
+      "plq": 250
+    },
+    "expected": {
+      "raw": {
+        "apri": 0.3
+      },
+      "main": "0,30",
+      "level": "low",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "ast": 30,
+      "lsn": 40,
+      "plq": 250
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "AST 60, LSN 40, plaquetas 150: 1,00 (indeterminado)",
+    "input": {
+      "ast": 60,
+      "lsn": 40,
+      "plq": 150
+    },
+    "expected": {
+      "raw": {
+        "apri": 1
+      },
+      "level": "mid",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "ast": 60,
+      "lsn": 40,
+      "plq": 150
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "AST 80, LSN 40, plaquetas 100: 2,00 (fibrose significativa provável; cirrose ainda indeterminada)",
+    "input": {
+      "ast": 80,
+      "lsn": 40,
+      "plq": 100
+    },
+    "expected": {
+      "raw": {
+        "apri": 2
+      },
+      "level": "high",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "ast": 80,
+      "lsn": 40,
+      "plq": 100
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "AST 120, LSN 40, plaquetas 100: 3,00 (cirrose provável)",
+    "input": {
+      "ast": 120,
+      "lsn": 40,
+      "plq": 100
+    },
+    "expected": {
+      "raw": {
+        "apri": 3
+      },
+      "level": "high",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "ast": 120,
+      "lsn": 40,
+      "plq": 100
+    },
+    "expandedZeroOptions": []
+  }
+]
