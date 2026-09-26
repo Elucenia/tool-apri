@@ -1,9 +1,11 @@
-/* ELUCENIA standalone integration. Source package metadata and rights: README.md. */
+/* tool-apri · Elucenia · https://github.com/Elucenia/tool-apri
+   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+   Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"apri","title":"APRI (índice AST/plaquetas)","fields":[["ast","AST (TGO)","num",{"min":1,"max":5000,"unit":"U/L","ph":"60"}],["lsn","Limite superior do normal da AST (do laboratório)","num",{"min":10,"max":100,"unit":"U/L","ph":"40"}],["plq","Plaquetas","num",{"min":5,"max":1500,"unit":"× 10³/mm³","ph":"150"}]],"config":null,"reviewStatus":"needs-review","clinicalValidation":"not-performed"});
 const window={};
-/* ELUCENIA arithmetic registry. No DOM access, storage, telemetry or network requests. */
+/* Elucenia arithmetic registry. No DOM access, storage, telemetry or network requests. */
 (function(root){
   'use strict';
   const CALC={fn:Object.create(null)};
